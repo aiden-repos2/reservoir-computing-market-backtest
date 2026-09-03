@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: Cite the tagged version of this software.
+title: Reservoir Computing Market Backtest
+version: 1.0.0
+date-released: 2026-09-03
+type: software
+authors:
+  - family-names: Singh
+    given-names: Aiden
+    orcid: https://orcid.org/0009-0009-2681-4356
+    affiliation: Independent Researcher
+    email: contact.aiden.singh@gmail.com
+license: MIT
+abstract: >-
+  Research software for a retrospective simulated market backtest using an
+  Ikeda-type delay reservoir, an expanding-window ridge readout, and a
+  volatility-scaled portfolio rule. On a fixed 628-session holdout spanning
+  2024-01-02 through 2026-07-06, the nine-instrument simulated portfolio
+  produced a 5.7199 percent net return under the stated cost rule, with a net
+  Sharpe ratio of 1.3930, maximum drawdown of -1.6863 percent, and an
+  elapsed-calendar-time Calmar ratio of 1.3299. These historical simulation
+  statistics are not live performance or a guarantee of future results.
+keywords:
+  - reservoir computing
+  - Ikeda delay system
+  - time-series prediction
+  - simulated backtesting
+  - walk-forward validation
+  - Calmar ratio

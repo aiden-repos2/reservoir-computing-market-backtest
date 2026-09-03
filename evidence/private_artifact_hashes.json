@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "private_artifacts": {
+    "holdout_series_original": {
+      "logical_path": "historical_archive/campaign/results/holdout_series.npz",
+      "sha256": "c8f5c0081ab0e28d834b5b41d5263f1060ac5611a3cadd8c7905e2a40c800a1f",
+      "size_bytes": 190390,
+      "classification": "private_source_derived_model_output",
+      "semantic_profile": "holdout_series_36_arrays"
+    },
+    "holdout_series_minimized": {
+      "logical_path": "private_legacy/holdout_series.npz",
+      "sha256": "fcce06f796e2c11df63766d8c2e2e27aadffa408b53ba60aef7b0c0e23634714",
+      "size_bytes": 156002,
+      "classification": "private_source_derived_model_output",
+      "semantic_profile": "holdout_series_36_arrays"
+    }
+  },
+  "historical_aggregate_sources": {
+    "holdout.json": {
+      "sha256": "36f6858f611997027cc40fc06d26268c5b3d62a504f16bb7b09da0a4c92f2772",
+      "size_bytes": 10014
+    }
+  },
+  "historical_source_identities": {
+    "campaign/run_holdout.py": "38ceace00fd57c21ef3b949feb6c659a76896b5ea6f0a1d3ed66e63c7870a763",
+    "campaign/harness.py": "588ce488f1604e58f9df7b753f3cb410ee18ec05930874f62dd7b4c8a8cf039f",
+    "campaign/run_architectures.py": "6e68ee4bbcae5871f1191082b00ded4691f80889013bb1ec5db4bda7457b9528",
+    "campaign/fastkern.c": "609a37f98c4f63c62b7975722691b5d7d2b79f8d4c0075874913b15c9c07bc2e",
+    "campaign/build_features.py": "1623d5a2d63090cfd462a512326c5815aa2c8647797913843b659033aa4209f2",
+    "historical_archive/lab/nodes.py": "e9b7ee6b70287fb532ca4dd7041ee0c3c215c41a3740300ae7ccc0387ec2e149",
+    "campaign/results/arch_search.json": "11439a2509e8b9916cda58fea2dec4538e083e9385bcf516e1d027c493052c56",
+    "campaign/results/arch_summary.json": "2789889a723a93283b7023e50f60273e753731621a4d78bc4a3afcf819d0f634",
+    "campaign/results/trials.csv": "f5fc1d7bcbfa33a204de63a568b9c6490e5186f470d4e562888b4d253a9ba14b"
+  },
+  "policy": {
+    "redistributed": false,
+    "verification_order": ["size", "sha256", "schema", "calculation"],
+    "unknown_hash_action": "fail_closed",
+    "automatic_download": false
+  }
+}

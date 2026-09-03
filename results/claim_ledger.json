@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "claims": [
+    {
+      "id": "historical_calmar",
+      "claim": "The archived simulated holdout return path has a Calmar ratio of approximately 1.33 under the primary elapsed-calendar-time convention.",
+      "status": "supported_descriptive_post_run_metric",
+      "conditions": "Nine-symbol equal-weight simulated net-return path, 2024-01-02 through 2026-07-06; not a prospective profitability claim."
+    },
+    {
+      "id": "holdout_raw_accuracy",
+      "claim": "The archived holdout summary reported a 55.24 percent mean of the nine per-symbol raw accuracies.",
+      "status": "supported_descriptive_archived_metric",
+      "conditions": "Unweighted mean of the nine rounded per-symbol values over 628 sessions per symbol, 2024-01-02 through 2026-07-06. Raw accuracy alone is not treated as proof of forecast skill."
+    },
+    {
+      "id": "validated_alpha_or_future_performance",
+      "claim": "The historical metrics establish statistically validated alpha or predict future performance.",
+      "status": "not_claimed",
+      "conditions": "The package reports a retrospective simulation with simplified costs over one holdout interval; it is neither a live-trading record nor a prospective validation."
+    },
+    {
+      "id": "physical_hardware_performance",
+      "claim": "The reported metrics were produced by a physical reservoir device.",
+      "status": "not_tested",
+      "conditions": "The reservoir and portfolio were simulated in software; no hardware experiment or execution test was conducted."
+    },
+    {
+      "id": "public_end_to_end_rerun",
+      "claim": "A public checkout can refit the historical market experiment from raw data.",
+      "status": "not_available",
+      "conditions": "Restricted and source-derived market feature rows are not redistributed. Public code demonstrates the frozen method and can exactly replay metrics only when the separately retained hash-verified return artifact is supplied."
+    }
+  ]
+}

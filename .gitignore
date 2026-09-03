@@ -1,0 +1,45 @@
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.dylib
+*.dll
+*.o
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+
+# Private or source-derived evidence
+data/raw/
+data/features/
+evidence/private/
+results/private/
+private_source_derived/
+*.npz
+
+# Generated reports and archives
+reports/generated/
+release/
+*.zip
+*.tar.gz
+*.sha256
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example

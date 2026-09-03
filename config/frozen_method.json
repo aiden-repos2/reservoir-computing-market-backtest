@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "scope": "historical_method_reconstruction_not_full_public_refit",
+  "symbols": ["SPY", "QQQ", "XLK", "XLF", "XLE", "XLV", "XLI", "TLT", "GLD"],
+  "input_contract": {
+    "SPY_feature_count": 39,
+    "other_symbol_feature_count": 40,
+    "target": "sign(next-session log adjusted-close return)",
+    "target_encoding": [-1, 0, 1],
+    "row_filter": "drop rows with missing next-session return",
+    "missing_feature_policy": "replace missing model-input values with 0.0"
+  },
+  "ikeda": {
+    "virtual_nodes": 200,
+    "theta_steps": 10,
+    "dt": 0.08661933269857963,
+    "feedback_gain_beta": 0.3441984642966166,
+    "phase_offset": 1.1583611813967833,
+    "input_scale": 0.013175730055118363,
+    "auxiliary_delta": 0.0,
+    "desynchronization": 7,
+    "mask_mode": "binary",
+    "mask_seed": 1234
+  },
+  "readout": {
+    "type": "ridge",
+    "penalty": 1.0,
+    "intercept_penalized": true,
+    "score_transform": "1 / (1 + exp(-4 * score))",
+    "expanding_window": true,
+    "walk_forward_anchor": "first row on or after 2016-01-01",
+    "refit_every_sessions": 21,
+    "embargo_sessions": 5,
+    "reporting_slice": "select rows on or after 2024-01-01 after continuous scoring"
+  },
+  "volatility_sizing": {
+    "model": "HAR-style expanding ridge on current log volatility and trailing 5- and 21-session means",
+    "target": "next-session log volatility",
+    "initial_training_sessions": 504,
+    "penalty": 0.0001,
+    "intercept_penalized": true,
+    "refit_every_sessions": 21,
+    "embargo_sessions": 5,
+    "prefit_fallback": "current log volatility"
+  },
+  "portfolio": {
+    "annual_volatility_target": 0.1,
+    "annualization_sessions": 252,
+    "maximum_absolute_weight": 1.0,
+    "cost_basis_points_per_absolute_weight_change": 2.5,
+    "position_and_cost_stream": "continuous from the 2016 walk-forward anchor; the 2024 reporting slice does not reset the prior weight",
+    "cross_symbol_aggregation": "equal_weight_on_common_dates"
+  },
+  "periods": {
+    "development_evaluation": ["2016-01-01", "2023-12-31"],
+    "historical_holdout": ["2024-01-02", "2026-07-06"]
+  }
+}
